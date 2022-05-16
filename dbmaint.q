@@ -1,3 +1,5 @@
+/Just adding some random comments for capstone project purposes
+
 / kdb+ partitioned database maintenance
 \d .os
 WIN:.z.o in`w32`w64
@@ -16,6 +18,8 @@ add1col:{[tabledir;colname;defaultvalue]
   @[tabledir;`.d;,;colname]]}
 
 allcols:{[tabledir]get tabledir,`.d}
+
+/random comment 1
 
 allpaths:{[dbdir;table]
  files:key dbdir;
@@ -40,6 +44,7 @@ enum:{[tabledir;val]
 
 enum:{[tabledir;val]if[not 11=abs type val;:val];.Q.dd[tabledir;`sym]?val}
 
+/random comment 2
 
 find1col:{[tabledir;col]
  $[col in allcols tabledir;
@@ -49,6 +54,8 @@ find1col:{[tabledir;col]
 fix1table:{[tabledir;goodpartition;goodpartitioncols]
  if[count missing:goodpartitioncols except allcols tabledir;
   stdout"fixing table `",string tabledir;{add1col[x;z;0#get y,z]}[tabledir;goodpartition]each missing]}
+
+/random comment 3
 
 fn1col:{[tabledir;col;fn]
  if[col in allcols tabledir;
@@ -69,6 +76,8 @@ rename1col:{[tabledir;oldname;newname]
   .os.ren[` sv tabledir,oldname;` sv tabledir,newname];@[tabledir;`.d;:;.[ac;where ac=oldname;:;newname]]]}
 
 ren1table:{[old;new]stdout"renaming ",(string old)," to ",string new;.os.ren[old;new];}
+
+/random comment 4
 
 add1table:{[dbdir;tablename;table]
  stdout"adding ",string tablename;
