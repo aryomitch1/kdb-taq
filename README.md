@@ -105,3 +105,7 @@ which would expose your application to various risks:
 
 Instead, download code and subject it to the version control and regression testing
 you use for your application.
+
+## This section is added for the capstone project by aryomitch1
+
+This is one of many modifications made for the capstone project
